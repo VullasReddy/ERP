@@ -1,6 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
-title GIFT CMS - Django server (keep this window open)
+title NCET CMS - Django server (keep this window open)
 cd /d "%~dp0"
 set "ZIP=Collage-Management-System-For-GiFt-collage--main.zip"
 set "APPDIR=%~dp0gift-cms\Collage-Management-System-For-GiFt-collage--main"

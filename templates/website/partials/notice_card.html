@@ -13,7 +13,7 @@
     </div>
     <div class="blog-content">
         <div class="blog-meta">
-            <a class="author" href="{% url 'website:notices' %}?category={{ n.category }}"><span class="author-icon"><img src="{% static college.logo %}" alt="GIFT" style="object-fit:contain;background:#fff;"></span>{{ n.get_category_display }}</a>
+            <a class="author" href="{% url 'website:notices' %}?category={{ n.category }}"><span class="author-icon"><img src="{% static college.logo %}" alt="NCET" style="object-fit:contain;background:#fff;"></span>{{ n.get_category_display }}</a>
         </div>
         <h3 class="box-title"><a href="{{ n.get_absolute_url }}">{{ n.title }}</a></h3>
         <p class="box-text">{{ n.summary|truncatechars:120 }}</p>

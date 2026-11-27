@@ -32,8 +32,8 @@
         <div class="preloader-inner">
             <img src="{% static college.logo %}" alt="{{ college.short }}" class="preloader-logo">
             <span class="loader">
-                GIFT
-                <span class="loading-text">GIFT</span>
+                NCET
+                <span class="loading-text">NCET</span>
             </span>
         </div>
     </div>
@@ -188,7 +188,7 @@
             <div class="menu-area">
                 <div class="container th-container2">
                     <div class="menu-wrapp">
-                        <div class="row align-items-center justify-content-between">
+                        <div class="row align-items-center justify-content-between flex-nowrap g-0">
                             <div class="col-auto">
                                 <div class="header-left d-flex align-items-center">
                                     <div class="header-logo d-block d-sm-none">
@@ -205,14 +205,14 @@
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-auto ms-lg-auto">
+                            <div class="col-auto ms-auto">
                                 <div class="header-button">
                                     <form class="search-form" action="{% url 'website:search' %}" method="get">
                                         <input type="text" name="q" placeholder="Search..." aria-label="Search">
                                         <button type="submit" aria-label="Search"><i class="fa-light fa-magnifying-glass"></i></button>
                                     </form>
-                                    <a href="#" class="icon-btn sideMenuToggler d-none d-xl-block" aria-label="Open side menu"><img src="{% static 'assets/img/icon/grid2.svg' %}" alt=""></a>
-                                    <button type="button" class="th-menu-toggle d-inline-block d-xl-none" aria-label="Open menu"><i class="far fa-bars"></i></button>
+                                    <a href="#" class="icon-btn sideMenuToggler d-none d-xl-inline-flex" aria-label="Open side menu"><img src="{% static 'assets/img/icon/grid2.svg' %}" alt=""></a>
+                                    <button type="button" class="th-menu-toggle d-inline-flex d-xl-none" aria-label="Open menu"><i class="far fa-bars"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +262,7 @@
                     <div class="col-md-6 col-xl-auto">
                         <div class="widget footer-widget">
                             <div class="th-widget-about">
-                                <h3 class="widget_title">About GIFT</h3>
+                                <h3 class="widget_title">About NCET</h3>
                                 <p class="about-text">{{ college.about }}</p>
                                 <div class="footer-info">
                                     <a href="{% url 'website:contact' %}"><span class="footer-info-icon"><i class="fa-solid fa-location-dot"></i></span> {{ college.address }}</a>
@@ -308,15 +308,15 @@
                         <div class="widget th-widget-instagram footer-widget">
                             <h3 class="widget_title">Campus Gallery</h3>
                             <div class="instagram-feeds">
-                                <div class="insta-thumb"><img src="{% static 'brand/campus1.jpg' %}" alt="GIFT campus"><a href="{% static 'brand/campus1.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{% static 'brand/hero-gate.jpg' %}" alt="GIFT campus"><a href="{% static 'brand/hero-gate.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{% static 'brand/hero-students.jpg' %}" alt="GIFT campus"><a href="{% static 'brand/hero-students.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{% static 'brand/gift-a1.jpg' %}" alt="GIFT achievement"><a href="{% static 'brand/gift-a1.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{% static 'brand/gift-a2.jpg' %}" alt="GIFT achievement"><a href="{% static 'brand/gift-a2.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{% static 'brand/gift-a3.jpg' %}" alt="GIFT achievement"><a href="{% static 'brand/gift-a3.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{% static 'brand/gift-a4.jpg' %}" alt="GIFT achievement"><a href="{% static 'brand/gift-a4.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{% static 'brand/gift-a5.jpg' %}" alt="GIFT achievement"><a href="{% static 'brand/gift-a5.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="insta-thumb"><img src="{% static 'brand/youth-parliament.jpg' %}" alt="Youth Parliament at GIFT"><a href="{% static 'brand/youth-parliament.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/campus1.jpg' %}" alt="NCET campus"><a href="{% static 'brand/campus1.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/hero-gate.jpg' %}" alt="NCET campus"><a href="{% static 'brand/hero-gate.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/hero-students.jpg' %}" alt="NCET campus"><a href="{% static 'brand/hero-students.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/gift-a1.jpg' %}" alt="NCET achievement"><a href="{% static 'brand/gift-a1.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/gift-a2.jpg' %}" alt="NCET achievement"><a href="{% static 'brand/gift-a2.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/gift-a3.jpg' %}" alt="NCET achievement"><a href="{% static 'brand/gift-a3.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/gift-a4.jpg' %}" alt="NCET achievement"><a href="{% static 'brand/gift-a4.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/gift-a5.jpg' %}" alt="NCET achievement"><a href="{% static 'brand/gift-a5.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
+                                <div class="insta-thumb"><img src="{% static 'brand/youth-parliament.jpg' %}" alt="Youth Parliament at NCET"><a href="{% static 'brand/youth-parliament.jpg' %}" class="insta-btn popup-image"><i class="fab fa-instagram"></i></a></div>
                             </div>
                         </div>
                     </div>

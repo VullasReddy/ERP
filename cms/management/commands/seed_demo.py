@@ -1,5 +1,5 @@
 """
-Load realistic demo data for GIFT Autonomous so every module and role can be tried out.
+Load realistic demo data for NCET Autonomous so every module and role can be tried out.
 
     python manage.py seed_demo            # create demo data (idempotent for masters)
     python manage.py seed_demo --flush    # wipe college data first
@@ -62,7 +62,7 @@ LAST = ["Mohanty", "Panda", "Sahoo", "Das", "Mishra", "Behera", "Nayak", "Pradha
 
 
 class Command(BaseCommand):
-    help = "Create GIFT Autonomous demo data for all modules and roles."
+    help = "Create NCET Autonomous demo data for all modules and roles."
 
     def add_arguments(self, parser):
         parser.add_argument("--flush", action="store_true", help="Delete existing college data first")
@@ -70,7 +70,7 @@ class Command(BaseCommand):
     def user(self, username, first, last, role, dept=None, email=None, superuser=False):
         u, created = User.objects.get_or_create(username=username, defaults={
             "first_name": first, "last_name": last, "role": role, "department": dept,
-            "email": email or f"{username}@gift.edu.in", "phone": f"+91 9{random.randint(100000000, 999999999)}",
+            "email": email or f"{username}@ncet.edu.in", "phone": f"+91 9{random.randint(100000000, 999999999)}",
             "is_superuser": superuser, "is_staff": superuser,
         })
         if created:
@@ -103,8 +103,8 @@ class Command(BaseCommand):
             courses[code], _ = m.Course.objects.get_or_create(code=code, defaults={
                 "name": name, "department": depts[dcode], "level": level, "duration_years": yrs, "total_semesters": sems,
                 "seats": seats, "image": img, "eligibility": elig,
-                "short_description": f"{yrs}-year {dict(m.Course.Level.choices)[level].lower()} program at GIFT Autonomous, accredited and industry-aligned.",
-                "description": f"The {name} program at GIFT Autonomous blends strong fundamentals with hands-on labs, industry projects, "
+                "short_description": f"{yrs}-year {dict(m.Course.Level.choices)[level].lower()} program at NCET Autonomous, accredited and industry-aligned.",
+                "description": f"The {name} program at NCET Autonomous blends strong fundamentals with hands-on labs, industry projects, "
                                f"internships and mentoring. Students benefit from NAAC A++ quality processes, NBA-accredited curriculum, "
                                f"e-learning and a placement record of 98%+ since 2011.",
             })
@@ -135,13 +135,13 @@ class Command(BaseCommand):
             u = self.user(un, f, l, Role.FACULTY, depts[d])
             faculty_users.append(u)
             m.FacultyProfile.objects.get_or_create(user=u, defaults={
-                "employee_id": f"GIFT-F{i:03d}", "department": depts[d], "designation": desig, "qualification": "Ph.D, M.Tech",
+                "employee_id": f"NCET-F{i:03d}", "department": depts[d], "designation": desig, "qualification": "Ph.D, M.Tech",
                 "specialization": spec, "experience_years": random.randint(4, 20), "basic_salary": Decimal(random.choice([55000, 65000, 80000, 95000])),
                 "bio": f"{desig} in {depts[d].name} specialising in {spec}. Active researcher with publications in reputed journals.",
             })
         for hod, d, n in ((hod_cse, "CSE", 90), (hod_me, "ME", 91)):
             m.FacultyProfile.objects.get_or_create(user=hod, defaults={
-                "employee_id": f"GIFT-F{n:03d}", "department": depts[d], "designation": "Professor & HOD", "qualification": "Ph.D",
+                "employee_id": f"NCET-F{n:03d}", "department": depts[d], "designation": "Professor & HOD", "qualification": "Ph.D",
                 "specialization": "Department leadership", "experience_years": 22, "basic_salary": Decimal("120000")})
 
         # ---------------------------------------------------------------- subjects, batches, timetable
@@ -338,18 +338,18 @@ class Command(BaseCommand):
             events = [("Annual Tech Fest — TECHNOVATION", "Three days of hackathons, robotics, coding contests and project expos.", "brand/gift-a2.jpg", 12),
                       ("17th Youth Parliament Competition", "Empowering students through leadership, civic awareness and democratic engagement.", "brand/youth-parliament.jpg", 26),
                       ("Campus Placement Drive — TCS & Infosys", "Mega recruitment drive for the final-year B.Tech and MCA students.", "brand/campus-leader.webp", 33),
-                      ("National Conference on Emerging Technologies", "Paper presentations and keynote sessions by industry experts and GIFT faculty.", "brand/gift-a3.jpg", -15)]
+                      ("National Conference on Emerging Technologies", "Paper presentations and keynote sessions by industry experts and NCET faculty.", "brand/gift-a3.jpg", -15)]
             for title, summary, img, delta in events:
                 Event.objects.create(title=title, summary=summary, body=summary + "\n\nAll students are encouraged to participate. Registrations are open at the student activity centre.",
                                      image=img, date=today + timedelta(days=delta), start_time=time(9, 30), end_time=time(17, 0))
         if not Notice.objects.exists():
-            notices = [("Admission 2026 open for B.Tech, M.Tech, MBA & MCA", "admission", "Apply online through the GIFT portal. Upload your documents and track your application status anytime.", "brand/promo1.webp"),
-                       ("GIFT: An MSME Incubation Centre", "achievement", "GIFT is recognised as a Host Institute / Business Incubator under the MSME scheme for entrepreneurial and managerial development.", "brand/gift-1.jpg"),
-                       ("GIFT students shine at the National Robotics Fest", "news", "GIFT teams won the 2nd and 3rd prizes at ROBOFEST 2K17, showcasing innovation from our labs.", "brand/gift-a5.jpg"),
+            notices = [("Admission 2026 open for B.Tech, M.Tech, MBA & MCA", "admission", "Apply online through the NCET portal. Upload your documents and track your application status anytime.", "brand/promo1.webp"),
+                       ("NCET: An MSME Incubation Centre", "achievement", "NCET is recognised as a Host Institute / Business Incubator under the MSME scheme for entrepreneurial and managerial development.", "brand/gift-1.jpg"),
+                       ("NCET students shine at the National Robotics Fest", "news", "NCET teams won the 2nd and 3rd prizes at ROBOFEST 2K17, showcasing innovation from our labs.", "brand/gift-a5.jpg"),
                        ("Apply as Supervisor / Co-Supervisor for Ph.D", "notice", "Eligible faculty may apply as supervisors for the Ph.D program. Contact the Ph.D admissions cell for details.", "brand/gift-3-1.png"),
-                       ("98% placement for the outgoing batch", "placement", "Congratulations to all GIFTIANs placed in leading companies this season.", "brand/campus-leader.webp")]
+                       ("98% placement for the outgoing batch", "placement", "Congratulations to all NCET students placed in leading companies this season.", "brand/campus-leader.webp")]
             for i, (t, cat, s, img) in enumerate(notices):
-                Notice.objects.create(title=t, category=cat, summary=s, body=s + "\n\nFor further details contact info@gift.edu.in.", image=img,
+                Notice.objects.create(title=t, category=cat, summary=s, body=s + "\n\nFor further details contact info@ncet.edu.in.", image=img,
                                       published_on=today - timedelta(days=i * 6))
         if not FAQ.objects.exists():
             for i, (q, a) in enumerate([
@@ -358,13 +358,13 @@ class Command(BaseCommand):
                 ("Can fees be paid online?", "Yes. Students and parents can pay semester fees online and download receipts instantly from the portal."),
                 ("Are scholarships available?", "Merit scholarships, sports quota and government scholarships are available. Concessions are applied directly to your fee invoice."),
                 ("How can parents monitor their ward?", "Parents register on the portal and the admission office links them to their ward. They can then see attendance, fees and results."),
-                ("What is the placement record?", "GIFT has maintained 98%+ placements since 2011 with recruiters like TCS, Infosys, Oracle, Samsung and Maruti Suzuki."),
+                ("What is the placement record?", "NCET has maintained 98%+ placements since 2011 with recruiters like TCS, Infosys, Oracle, Samsung and Maruti Suzuki."),
             ]):
                 FAQ.objects.create(question=q, answer=a, order=i)
         if not Testimonial.objects.exists():
             for i, (n, q, p) in enumerate([
                 ("Sagufta Yashmin", "Regular classroom teaching supported by e-learning makes teaching and learning much simpler and lucid.", "brand/gift-t1.jpg"),
-                ("Tanuprava Das", "GIFT has an eco-friendly environment and well experienced faculty members who teach with full dedication.", "brand/gift-t2.jpg"),
+                ("Tanuprava Das", "NCET has an eco-friendly environment and well experienced faculty members who teach with full dedication.", "brand/gift-t2.jpg"),
                 ("Yash Aditya", "The college has a majestic infrastructure. We stay connected with teachers through the mentoring system.", "brand/gift-t3.jpg"),
             ]):
                 Testimonial.objects.create(name=n, role="3rd Year Student", quote=q, photo=p, order=i)

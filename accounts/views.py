@@ -54,7 +54,7 @@ def register_view(request):
         user.save()
         login(request, user, backend="django.contrib.auth.backends.ModelBackend")
         audit(request, "auth.register", user, user.role)
-        notify(user, "Welcome to GIFT Autonomous", "Your account has been created.", "/portal/", "success", email=True)
+        notify(user, "Welcome to NCET Autonomous", "Your account has been created.", "/portal/", "success", email=True)
         messages.success(request, "Account created successfully.")
         if user.role == "student":
             return redirect(_next_url(request, "cms:apply"))

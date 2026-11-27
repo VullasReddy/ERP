@@ -17,7 +17,7 @@
 </div>
 <section class="space">
     <div class="container">
-        <div class="title-area text-center"><span class="sub-title">OUR TOP RECRUITERS</span><h2 class="sec-title">Companies that hire GIFTIANs</h2></div>
+        <div class="title-area text-center"><span class="sub-title">OUR TOP RECRUITERS</span><h2 class="sec-title">Companies that hire NCETIANs</h2></div>
         <div class="text-center">{% for c in companies %}<span class="recruiter-chip"><i class="fa-solid fa-building text-theme"></i>{{ c.name }}</span>{% endfor %}</div>
         {% if selected %}
         <div class="title-area text-center mt-60"><span class="sub-title">RECENTLY PLACED</span><h2 class="sec-title">Congratulations!</h2></div>
@@ -28,7 +28,7 @@
         </div>
         {% endif %}
         <div class="text-center mt-60">
-            <a href="{% url 'accounts:register' %}?role=recruiter" class="th-btn th-icon">Recruit from GIFT</a>
+            <a href="{% url 'accounts:register' %}?role=recruiter" class="th-btn th-icon">Recruit from NCET</a>
             <a href="{% url 'cms:jobs' %}" class="th-btn style-border1 th-icon">Student Job Board</a>
         </div>
     </div>

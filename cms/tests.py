@@ -82,7 +82,7 @@ class WorkflowTests(TestCase):
             "previous_institution": "DAV", "qualifying_exam": "JEE", "percentage": "88.5", "entrance_rank": "1234"})
         app = m.Application.objects.get(applicant=applicant)
         self.assertRedirects(r, reverse("cms:application_detail", args=[app.pk]))
-        self.assertTrue(app.application_no.startswith("GIFT"))
+        self.assertTrue(app.application_no.startswith("NCET"))
         doc = SimpleUploadedFile("marks.pdf", b"%PDF-1.4 test", content_type="application/pdf")
         self.client.post(reverse("cms:application_detail", args=[app.pk]), {"upload": "1", "doc_type": "12th", "file": doc})
         self.assertEqual(app.documents.count(), 1)
