@@ -107,8 +107,8 @@ CAMPUS_GALLERY = [
     ("brand/gift-a1.jpg", "Hybrid Solar Car", "Built by students and inaugurated by the Vice Chairman."),
     ("brand/gift-a2.jpg", "Hackathon Winners", "First prize with a cash award of Rs. One Lakh at a national hackathon."),
     ("brand/gift-a3.jpg", "National Conferences", "Awards at the 33rd Convention of Mechanical Engineers, Udaipur."),
-    ("brand/gift-a4.jpg", "Graced by the President of India", "Technical paper presentation by NCET students."),
-    ("brand/gift-a5.jpg", "Robotics Champions", "NCET teams won the 2nd and 3rd prizes at ROBOFEST 2K17."),
+    ("brand/gift-a4.jpg", "Graced by the President of India", "Technical paper presentation by GIFT students."),
+    ("brand/gift-a5.jpg", "Robotics Champions", "GIFT teams won the 2nd and 3rd prizes at ROBOFEST 2K17."),
     ("brand/youth-parliament.jpg", "Youth Parliament", "Leadership, civic awareness and democratic engagement."),
 ]
 

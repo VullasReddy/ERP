@@ -194,7 +194,7 @@ def enroll(request, pk):
                                  exam_fee=fs.exam_fee, other_fee=fs.development_fee + fs.other_fee, due_date=fs.due_date)
     m.PlacementProfile.objects.get_or_create(student=student)
     audit(request, "admission.enroll", student)
-    notify(user, "Welcome to NCET Autonomous!", f"You are enrolled in {app.course.name}. Your roll number is {student.roll_no}.",
+    notify(user, "Welcome to GIFT Autonomous!", f"You are enrolled in {app.course.name}. Your roll number is {student.roll_no}.",
            reverse("cms:dashboard"), "success", email=True)
     messages.success(request, f"Enrolled. Roll number generated: {student.roll_no}")
     return redirect("cms:student_detail", student.pk)

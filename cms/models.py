@@ -239,7 +239,7 @@ class Application(TimeStamped):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         if not self.application_no:
-            self.application_no = f"NCET{timezone.now():%y}{self.pk:05d}"
+            self.application_no = f"GIFT{timezone.now():%y}{self.pk:05d}"
             super().save(update_fields=["application_no"])
 
     def __str__(self):

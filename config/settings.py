@@ -1,5 +1,5 @@
 """
-Django settings for the NCET Autonomous College Management System.
+Django settings for the GIFT Autonomous College Management System.
 
 All secrets / environment specific values come from environment variables
 (or a local `.env` file). See `.env.example`.
@@ -135,7 +135,7 @@ if os.getenv("EMAIL_HOST"):
     EMAIL_USE_TLS = env_bool("EMAIL_USE_TLS", True)
 else:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "NCET Autonomous <noreply@localhost>")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "GIFT Autonomous <noreply@localhost>")
 
 # REST API + JWT
 REST_FRAMEWORK = {
